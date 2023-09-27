@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{%load static%}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -138,7 +139,11 @@
               <td>{{ item.cost }}</td>              
               <td>{{ item.effiency }}</td>
               <td>{{ item.variation }}</td>
-              <td><img src="{{ item.receipt.url }}"  width="100"></td>
+              {% if item.receipt %}
+              <td><img src="{{ item.receipt.url }}" alt=""></td>
+              {% else %}
+              <td><img src="{% static 'uploads/receipt.png' %}" ></td>
+              {% endif %}
             </tr>
             {% endfor %}
           </tbody>

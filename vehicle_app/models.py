@@ -76,7 +76,7 @@ class Fuel(models.Model):
     total_distance_from_previous_fueling = models.IntegerField()
     Liters_taken = models.DecimalField(max_digits=10, decimal_places=2)
     cost = models.DecimalField(max_digits=10, decimal_places=2)
-    receipt = models.ImageField(upload_to='images/')
+    receipt = models.ImageField(upload_to='uploads/', null=True, blank=True)
     effiency = models.IntegerField()
     variation = models.IntegerField()
 
